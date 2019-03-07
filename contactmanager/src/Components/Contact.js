@@ -1,22 +1,28 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
+import 'bootstrap/dist/css/bootstrap.min.css';
+//import './contact.css';
+//import Contacts from './Contacts';
 
 class Contact extends Component {
-   
+//    static propTypes={
+//     name:PropTypes.object.isRequired,
+//     email:PropTypes.string.isRequired,
+//     phoneNo:PropTypes.string.isRequired
+// }
   render() {
-    const propTypes={
-        name:PropTypes.object.isRequired,
-        email:PropTypes.string.isRequired,
-        phoneNo:PropTypes.string.isRequired
-    }
-      const {name,email,phoneNo}=this.props;
+    
+    const {name,email,phoneNo}=this.props;
     return (
-      <div>
+      
+      <div className="card card-body mb-3">
         <h4>{name}</h4>
-          <ul>
-            <li>{email}</li>
-            <li>{phoneNo}</li>
-          </ul>
+        <ul className="list-group">
+          <li className="list-group-item">
+            email: {email}
+          </li>
+          <li className="list-group-item">Phone: {phoneNo}</li>
+        </ul>
        
       </div>
     );
@@ -24,11 +30,11 @@ class Contact extends Component {
 };
  
 //propTypes ---used for validation of the props
-// Contact.propTypes={
-//     name:PropTypes.object.isRequired,
-//     email:PropTypes.string.isRequired,
-//     phoneNo:PropTypes.string.isRequired
-// };
+Contact.propTypes={
+    name:PropTypes.string.isRequired,
+    email:PropTypes.string.isRequired,
+    phoneNo:PropTypes.string.isRequired
+};
 
 //---we can write the above propTypes inside the class as well  
 export default Contact;
