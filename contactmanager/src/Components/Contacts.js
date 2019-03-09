@@ -9,7 +9,7 @@ import Contact from './Contact';
              contacts:[
                  {  id:1,
                     name:'John Doe',
-                    email:'jdoe@gmail.com',
+                    email:'jdoe@ gmail.com',
                     phone:'0987654321'
                  },
                  {  id:2,
@@ -31,8 +31,11 @@ import Contact from './Contact';
       const {contacts}=this.state;
     return (
       <div>
-        {contacts.map(contact=><Contact key={contact.id}
-        name={contact.name} phone={contact.phone}/>)}
+         {/* {contacts.map(contact=>(<Contact Key={contact.id}
+        name={contact.name} email={contact.email} phone={contact.phone}/>))}  */}
+         {contacts.map(contact=>(<Contact Key={contact.id}
+        contact={contact}/>))} 
+        
       </div>
     )
   }
