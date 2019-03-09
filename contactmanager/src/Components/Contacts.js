@@ -27,16 +27,26 @@ import Contact from './Contact';
              ]
          }
      }
+
+     deleteContact=(id)=>{
+       const {contacts}=this.state;
+       const newContact=contacts.filter(contact=>contact.id!==id);
+       this.setState({contacts:newContact});
+     }
   render() {
       const {contacts}=this.state;
     return (
-      <div>
-         {/* {contacts.map(contact=>(<Contact Key={contact.id}
+      <React.Fragment>
+
+          {/* {contacts.map(contact=>(<Contact Key={contact.id}
         name={contact.name} email={contact.email} phone={contact.phone}/>))}  */}
-         {contacts.map(contact=>(<Contact Key={contact.id}
-        contact={contact}/>))} 
+         {contacts.map(contact=>(<Contact key={contact.id}
+        contact={contact} deleteClickHandler={this.deleteContact.bind(this,contact.id)} />))} 
+      </React.Fragment>
+       
         
-      </div>
+        
+     
     )
   }
 }
