@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Contacts from './Components/Contacts';
 import Header from './Components/Header';
+import {Provider}  from './Context';
 
 import "./App.css";
 //import Contacts from "./Components/Contacts";
@@ -8,7 +9,8 @@ import "./App.css";
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <Provider>
+         <div className="App">
         <Header branding="Contact Manager"/>
         <div className="container">
         <Contacts/>
@@ -16,7 +18,9 @@ class App extends Component {
         <Contact name='Tamisra' email='das26ananya@gmail.com' phoneNo='0987654321' /> */}
          </div>
        
-      </div>
+      </div> 
+      </Provider>
+     
     );
   }
 }
