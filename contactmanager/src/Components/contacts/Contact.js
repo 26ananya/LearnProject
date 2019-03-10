@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Consumer}  from '../Context';
+import {Consumer}  from '../../Context';
 //import './contact.css';
 //import Contacts from './Contacts';
 
