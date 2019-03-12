@@ -10,28 +10,28 @@ import TextInputGroup from '../layouts/textInputGroup';
          phone:'',
          errors:{}
      };
-     onChangeHandler=(e)=>
-     {
-        this.setState({[e.target.name]:e.target.value})
-     };
-
+    
      onSubmitHandler=(dispatch,e)=>{
         e.preventDefault(); 
         const {name,email,phone}=this.state;
-
+    
         //check for errors
-        if(name==='')
+        if(name === '')
+        {   
+            this.setState({erorrs:{name:'Name is required'}});
+            console.log(this.state.errors.name+"here");
+            return;
+        }
+        if(email === '')
         {
-            this.setState({erorrs:{name:'Name is required'}})
-        };
-        if(email==='')
-        {
-            this.setState({erorrs:{email:'Email is required'}})
-        };
+            this.setState({erorrs:{email: 'Email is required'}});
+            return;
+        }
 
-        if(phone==='')
+        if(phone === '')
         {
-            this.setState({erorrs:{phone:'Phone is required'}})
+            this.setState({erorrs: {phone: 'Phone is required'}});
+            return;
         }
         
         const newContact={
@@ -40,7 +40,7 @@ import TextInputGroup from '../layouts/textInputGroup';
             email,
             phone
         }
-         dispatch({type:'ADD_CONTACT',payload:newContact})
+         dispatch({type:'ADD_CONTACT',payload:newContact});
          
          this.setState({name:'',
                         email:'',
@@ -48,6 +48,12 @@ import TextInputGroup from '../layouts/textInputGroup';
                         errors:{}
         })
      };
+
+     onChangeHandler=(e)=>
+     {
+        this.setState({[e.target.name]:e.target.value})
+     };
+
 
   render() {
 
