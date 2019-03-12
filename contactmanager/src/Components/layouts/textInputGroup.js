@@ -14,6 +14,7 @@ const TextInputGroup=(props)=> {
                                   value={props.value}
                                   onChange={props.onChange}
                                   error={props.error}/>
+                                  {console.log(props.error)}
                                  {props.error && <div className="invalid-feedback">Wrong</div>} 
                               </div>
                              

@@ -8,7 +8,9 @@ import TextInputGroup from '../layouts/textInputGroup';
          name:'',
          email:'',
          phone:'',
-         errors:{}
+         errors:{
+             name:'I am start'
+         }
      };
     
      onSubmitHandler=(dispatch,e)=>{
@@ -18,8 +20,8 @@ import TextInputGroup from '../layouts/textInputGroup';
         //check for errors
         if(name === '')
         {   
-            this.setState({erorrs:{name:'Name is required'}});
-            console.log(this.state.errors.name +"here");
+            this.setState({erorrs:{name:"Name is required"}},()=>{ console.log(this.state.errors.name +"here")});
+           // console.log(this.state.errors.name +"here");
             return;
         }
         if(email === '')
@@ -63,6 +65,7 @@ import TextInputGroup from '../layouts/textInputGroup';
             {
                 value=>{
                     const {dispatch}=value;
+                    
                     return (
                         <div className="card mb-3">
                          <div className="card-header">Add Contacts</div>
