@@ -19,7 +19,7 @@ import TextInputGroup from '../layouts/textInputGroup';
         if(name === '')
         {   
             this.setState({erorrs:{name:'Name is required'}});
-            console.log(this.state.errors.name+"here");
+            console.log(this.state.errors.name +"here");
             return;
         }
         if(email === '')
