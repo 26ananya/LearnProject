@@ -26,12 +26,12 @@ import TextInputGroup from '../layouts/textInputGroup';
         };
         if(email==='')
         {
-            this.setState({erorrs:{name:'Email is required'}})
+            this.setState({erorrs:{email:'Email is required'}})
         };
 
         if(phone==='')
         {
-            this.setState({erorrs:{name:'Phone is required'}})
+            this.setState({erorrs:{phone:'Phone is required'}})
         }
         
         const newContact={
