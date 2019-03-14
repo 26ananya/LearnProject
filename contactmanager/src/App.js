@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Contacts from './Components/contacts/Contacts';
 import Header from './Components/layouts/Header';
 import {Provider}  from './Context';
-import AddContact from './Components/contacts/addContact';
+import AddContact from './Components/contacts/addContactTextInput';
 import "./App.css";
 //import Contacts from "./Components/Contacts";
 
