@@ -9,7 +9,9 @@ import TextInputGroup from '../layouts/textInputGroup';
          email:'',
          phone:'',
          errors:{
-             name:'I am start'
+             name:'',
+             emai:'',
+             phone:''
          }
      };
     
