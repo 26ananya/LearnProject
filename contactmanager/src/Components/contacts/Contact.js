@@ -12,7 +12,7 @@ class Contact extends Component {
 //     phoneNo:PropTypes.string.isRequired
 // }
 state={
-  showContactInfo:true
+  showContactInfo:false
 };
 
 // onShowClick=()=>{
