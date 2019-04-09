@@ -3,16 +3,12 @@ import {Consumer} from '../../Context';
 import uuid from 'uuid';
 import TextInputGroup from '../layouts/textInputGroup';
 
- class AddContact extends Component {
+ class AddContactTextInput extends Component {
      state={
          name:'',
          email:'',
          phone:'',
-         errors:{
-             name:'',
-             emai:'',
-             phone:''
-         }
+         errors:{}
      };
     
      onSubmitHandler=(dispatch,e)=>{
@@ -22,19 +18,23 @@ import TextInputGroup from '../layouts/textInputGroup';
         //check for errors
         if(name === '')
         {   
-            this.setState({erorrs:{name:"Name is required"}},()=>{ console.log(this.state.errors.name +"here")});
+            this.setState({errors: {name:"Name is required"}},()=>{ console.log(this.state.errors.name +"here")});
            // console.log(this.state.errors.name +"here");
+      
+         
             return;
         }
         if(email === '')
         {
-            this.setState({erorrs:{email: 'Email is required'}});
+            this.setState({errors: {email: 'Email is required'}});
             return;
         }
 
         if(phone === '')
         {
-            this.setState({erorrs: {phone: 'Phone is required'}});
+            this.setState({errors: {phone: 'Phone is required'}});
+         
+          
             return;
         }
         
@@ -50,7 +50,9 @@ import TextInputGroup from '../layouts/textInputGroup';
                         email:'',
                         phone:'',
                         errors:{}
-        })
+        });
+
+        this.props.history.push('/')
      };
 
      onChangeHandler=(e)=>
@@ -114,4 +116,4 @@ import TextInputGroup from '../layouts/textInputGroup';
   }
 }
 
-export default AddContact;
+export default AddContactTextInput;

@@ -2,20 +2,28 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-const TextInputGroup=(props)=> {
+const TextInputGroup= ({
+    label,
+    name,
+    value,
+    placeholder,
+    type,
+    onChange,
+    error
+})=> {
   return (
    
       <div className="form-group">
-                                  <label htmlFor={props.name}>{props.label}</label>
-                                  <input type={props.type} name={props.name}
+                                  <label htmlFor={name}>{label}</label>
+                                  <input type={type} name={name}
                                   className ={classnames('form-control form-control-lg',
-                                  {'is-invalid':props.error})}
-                                  placeholder={props.placeholder}
-                                  value={props.value}
-                                  onChange={props.onChange}
-                                  error={props.error}/>
-                                  {console.log(props.error)}
-                                 {props.error && <div className="invalid-feedback">{props.error}</div>} 
+                                  {'is-invalid': error})}
+                                  placeholder={placeholder}
+                                  value={value}
+                                  onChange={onChange}
+                                  error={error}/>
+                                  {console.log(error)}
+                                 {error && <div className="invalid-feedback">{error}</div>} 
                               </div>
                              
   
